@@ -5,8 +5,8 @@ function App() {
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
 
-  const key = process.env.REACT_APP_API_KEY;
-  const base = process.env.REACT_APP_BASE;
+  const key = "fea689ab42e84d5133ae9ee1c899feae";
+  const base = "https://api.openweathermap.org/data/2.5/";
 
   const search = e => {
     if (e.key === "Enter") {
