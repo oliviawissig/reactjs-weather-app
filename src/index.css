@@ -1,20 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
+
 body {
   margin: 0;
-  font-family: "montseratt",
+  font-family: "Noto Sans JP",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-y: none;
 }
 
 .App {
-  background-image: url("./assets/cold-bg.jpg");
+  background-image: url("./assets/home-desktop-bg.jpg");
   background-size: cover;
   background-position: bottom;
   transition: 0.4s ease-out;
 }
 
 .App.warm {
-  background-image: url("./assets/warm-bg.jpg");
+  background-image: url("./assets/warm-desktop-bg.jpg");
+}
+
+.App.cold {
+  background-image: url("./assets/cold-desktop-bg.jpg");
 }
 
 main {
@@ -24,19 +31,18 @@ main {
     rgba(0, 0, 0, 0.2),
     rgba(0, 0, 0, 0.75)
   );
-  padding: 25px;
 }
 
 .search-box {
   width: 100%;
-  margin-bottom: 75px;
+  margin-bottom: 18vh;
 }
 
-.search-box .search-bar {
-  display: block;
-  width: 90%;
+.search-bar {
+  width: 75vw;
   padding: 17px;
   margin: auto;
+  margin-top: 7vh;
 
   appearance: none;
   background: none;
@@ -46,31 +52,28 @@ main {
     255,
     255,
     255,
-    0.5
+    0.7
   );
-  border-radius: 0px 0px 16px
-    16px;
-  margin-top: -25px;
+  border-radius: 16px;
   box-shadow: 0px 5px
     rgba(0, 0, 0, 0.2);
   color: #313131;
-  font-size: 20px;
+  font-size: 2em;
   transition: 0.04s ease;
 }
 
-.search-box
-  .search-bar:focus {
+.search-bar:focus {
   background-color: rgba(
     255,
     255,
     255,
-    0.7
+    0.85
   );
 }
 
 .location-box .location {
   color: white;
-  font-size: 32px;
+  font-size: 45px;
   font-weight: 500;
   text-shadow: 3px 3px
     rgba(50, 50, 70, 0.5);
@@ -98,6 +101,7 @@ main {
   border-radius: 16px;
   padding: 15px 25px;
   font-size: 102px;
+  line-height: 110px;
   color: white;
   font-weight: 900;
   text-shadow: 3px 6px
@@ -112,4 +116,49 @@ main {
   font-weight: 700;
   text-shadow: 3px 3px
     rgba(50, 50, 70, 0.5);
+}
+
+#temp-unit {
+  font-size: 90px;
+}
+
+@media only screen and (max-width: 1050px) {
+  .App {
+    background-image: url("./assets/home-bg.jpg");
+  }
+
+  .App.warm {
+    background-image: url("./assets/warm-bg.jpg");
+  }
+
+  .App.cold {
+    background-image: url("./assets/cold-bg.jpg");
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .search-box {
+    margin-bottom: 11vh;
+  }
+
+  .search-bar {
+    font-size: 22px;
+  }
+
+  .location-box .location {
+    font-size: 40px;
+  }
+
+  .weather-box .temp {
+    font-size: 80px;
+    line-height: 90px;
+  }
+
+  #temp-unit {
+    font-size: 75px;
+  }
+
+  .weather-box .weather {
+    font-size: 40px;
+  }
 }
